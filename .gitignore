@@ -31,3 +31,5 @@ build/
 # Vagrant
 .vagrant
 /cookbooks/
+ssh.config
+

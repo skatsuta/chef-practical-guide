@@ -1,0 +1,19 @@
+DEPENDENCIES
+  apache2
+  mariadb
+  yum-epel
+
+GRAPH
+  apache2 (3.0.1)
+    iptables (>= 0.0.0)
+    logrotate (>= 0.0.0)
+  apt (2.6.1)
+  iptables (0.14.1)
+  logrotate (1.8.0)
+  mariadb (0.2.12)
+    apt (>= 0.0.0)
+    yum (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  yum (3.5.3)
+  yum-epel (0.6.0)
+    yum (~> 3.0)

@@ -1,6 +1,7 @@
 {
   "run_list": [
-    "recipe[dstat]"
+    "recipe[dstat]",
+    "recipe[apache]"
   ],
   "automatic": {
     "ipaddress": "default"

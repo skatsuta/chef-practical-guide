@@ -27,6 +27,20 @@ Vagrant.configure(2) do |config|
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
     node0.vm.network "private_network", ip: "192.168.35.10"
+
+    node0.omnibus.chef_version = :latest
+    node0.vm.provision :chef_solo do |chef|
+      chef.cookbooks_path = "./cookbooks"
+      chef.json = {
+        nginx: {
+          env: "ruby"
+        }
+      }
+      chef.run_list = %w[
+        recipe[yum-epel]
+        recipe[nginx]
+      ]
+    end
   end
 
   config.vm.define :node1 do |node1|
@@ -38,5 +52,19 @@ Vagrant.configure(2) do |config|
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
     node1.vm.network "private_network", ip: "192.168.35.11"
+
+    node1.omnibus.chef_version = :latest
+    node1.vm.provision :chef_solo do |chef|
+      chef.cookbooks_path = "./cookbooks"
+      chef.json = {
+        nginx: {
+          env: "ruby"
+        }
+      }
+      chef.run_list = %w[
+        recipe[yum-epel]
+        recipe[nginx]
+      ]
+    end
   end
 end

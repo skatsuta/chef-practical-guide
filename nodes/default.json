@@ -1,7 +1,8 @@
 {
   "run_list": [
     "recipe[dstat]",
-    "recipe[apache]"
+    "recipe[apache]",
+    "recipe[mariadb]"
   ],
   "automatic": {
     "ipaddress": "default"

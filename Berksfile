@@ -4,4 +4,5 @@ cookbook 'yum-epel'
 cookbook 'apache2'
 cookbook 'mariadb'
 cookbook 'git'
+cookbook 'nginx'
 
